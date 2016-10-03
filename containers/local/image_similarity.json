@@ -1,0 +1,24 @@
+{
+    "template": "image_similarity",
+    "order" : 0,
+    "settings" : {
+        "index" :    {
+            "number_of_shards" :   8,
+            "number_of_replicas" : 0,
+            "refresh_interval" :   "60s"
+        }
+    },
+    "mappings": {
+        "datum": {
+            "_all": {"enabled": false},
+            "properties": {
+                "hash": {"type": "string", "index": "not_analyzed"},
+                "histogram": {"type": "string", "index": "not_analyzed"},
+                "width": {"type": "integer", "index": "not_analyzed"},
+                "height": {"type": "integer", "index": "not_analyzed"},
+                "url": {"type": "string", "index": "not_analyzed"},
+                "lsh": {"type": "string", "index": "not_analyzed"}
+            }
+        }
+    }
+}

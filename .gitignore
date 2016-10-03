@@ -1,0 +1,30 @@
+# IntelliJ project files to ignore
+.idea
+*.iml
+
+# Gradle
+.gradle
+.gradletasknamecache
+
+# OSX kruft
+.DS_Store
+*~
+
+# Java Build Stuff
+build/
+classes/
+target/
+rebel.xml
+
+# Node/NPM Stuff
+node_modules/
+jspm_packages/
+*.results.json
+dist
+npm-debug.log
+gulpfile.tmp.*
+
+#imageserver stuff
+imageserver/images
+containers/local/images
+containers/local/data/

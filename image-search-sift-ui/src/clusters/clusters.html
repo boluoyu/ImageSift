@@ -1,0 +1,21 @@
+<template>
+  <section class="au-animate">
+    <h2>Clusters</h2>
+    <template repeat.for="cluster of response.clusters">
+      <div>${cluster.lsh}</div>
+      <div>${cluster.urls.length ? cluster.urls.length : 0} images</div>
+      <div class="flex-container">
+        <template repeat.for="img of cluster.urls">
+          <a href="${img}" target="_blank"><div class="uns-cluster-image" css="background-image:url(${img})"></div></a>
+        </template>
+      </div>
+      <hr>
+    </template>
+
+    <div class="text-center">
+      <button click.delegate="next()"  if.bind="response.hasMore">Next</button>
+      <button click.delegate="prev()"  if.bind="response.hasLess">Prev</button>
+    </div>
+
+  </section>
+</template>

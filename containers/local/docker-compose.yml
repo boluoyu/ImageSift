@@ -1,0 +1,17 @@
+version: '2'
+services:
+  imageserver:
+    build: ../../imageserver
+    ports:
+      - 3030:3000
+    volumes:
+      - ./images:/usr/src/app/images
+  elasticsearch:
+    image: elasticsearch:2.1.1
+    ports:
+      - 9200:9200
+      - 9300:9300
+    entrypoint: []
+    command: elasticsearch -Dnetwork.publish_host=localhost -Des.insecure.allow.root=true -Des.path.data=/var/esdata
+    volumes:
+       - ./data:/var/esdata

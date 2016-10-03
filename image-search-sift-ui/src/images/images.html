@@ -1,0 +1,17 @@
+<template>
+  <section class="au-animate">
+    <h2>Images</h2>
+    <div class="flex-container">
+      <a repeat.for="img of images" target="_blank" href="${img.url}">
+        <div class="uns-image" css="background-image: url(${img.url})"></div>
+      </a>
+    </div>
+    <div class="text-center" if.bind="response">
+      ${from+1} to ${to} of ${response.total}
+    </div>
+    <div class="text-center">
+      <button if.bind="hasLess" click.delegate="prev()">Prev</button>
+      <button if.bind="hasMore" click.delegate="next()">Next</button>
+    </div>
+  </section>
+</template>

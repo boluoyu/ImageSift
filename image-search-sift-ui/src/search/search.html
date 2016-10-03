@@ -1,0 +1,17 @@
+<template>
+  <require from="./search-result"></require>
+  <section class="au-animate">
+    <h2>Search</h2>
+
+    <div class="dropzoneDiv">
+
+    </div>
+
+    <div class="search-results">
+      <span class="search-summary" if.bind="response">Found ${response.images ? response.images.length : 0} similar images in ${response.duration} ms</span>
+      <template repeat.for="image of images">
+        <search-result image.bind="image"></search-result>
+      </template>
+    </div>
+  </section>
+</template>
